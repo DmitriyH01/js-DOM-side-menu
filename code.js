@@ -1,8 +1,8 @@
-var contentArr = [
+var contentMenu = [
   {
     nameClassFromArr: 'menu-item-1',
     contentGoods:
-      '<img class="img-content" src=https://5.allegroimg.com/s1440/033c6a/7bb6a97f479692fc249cfcfe4db5> <p> Audi в нынешнем виде является наследником концерна Auto Union, образованного в результате объединения четырёх компаний, выпускавших автомобили и мотоциклы под марками DKW, Horch, Audi и Wanderer. </p><p>Всем известно, что главными конкурентами Audi на автомобильном рынке являются компании Mercedes-Benz и BMW, так называемая «Немецкая Тройка». </p>',
+      '<img class="img-content" src=https://www.logobank.ru/images/ph/en/a2/audi_new.png> <p> Audi в нынешнем виде является наследником концерна Auto Union, образованного в результате объединения четырёх компаний, выпускавших автомобили и мотоциклы под марками DKW, Horch, Audi и Wanderer. </p><p>Всем известно, что главными конкурентами Audi на автомобильном рынке являются компании Mercedes-Benz и BMW, так называемая «Немецкая Тройка». </p>',
   },
   {
     nameClassFromArr: 'menu-item-2',
@@ -17,7 +17,7 @@ var contentArr = [
   {
     nameClassFromArr: 'menu-item-4',
     contentGoods:
-      '<img class="img-content" src=https://za-rulem.org/wp-content/uploads/2014/10/znachki-marok-avtomobilej-nissan-1024x795.jpg><p> Nissan Motor Co., Ltd.  — японский автопроизводитель, один из крупнейших в мире. Компания основана в 1933 году.</p><p>Эмблема выглядит как название марки в кругу, который означает восходящее солнце, символизирующее искренность.</p>',
+      '<img class="img-content" src=https://autochrome.ru/img/marka-mashiny-s-konem_62.jpg><p> Nissan Motor Co., Ltd.  — японский автопроизводитель, один из крупнейших в мире. Компания основана в 1933 году.</p><p>Эмблема выглядит как название марки в кругу, который означает восходящее солнце, символизирующее искренность.</p>',
   },
   {
     nameClassFromArr: 'menu-item-5',
@@ -49,15 +49,15 @@ document.querySelector('.menu-list').addEventListener('click', function (e) {
 });
 
 function showContent(nameClass) {
-  let element = document.querySelector('#content');
+  const element = document.querySelector('#content');
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
-  let newDiv = document.createElement('div');
+  const newDiv = document.createElement('div');
   element.className = 'content content-style';
-  for (let index in contentArr) {
-    if (contentArr[index].nameClassFromArr === nameClass) {
-      newDiv.innerHTML = contentArr[index].contentGoods;
+  for (let index in contentMenu) {
+    if (contentMenu[index].nameClassFromArr === nameClass) {
+      newDiv.innerHTML = contentMenu[index].contentGoods;
     }
   }
 
