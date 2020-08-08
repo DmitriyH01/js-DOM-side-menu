@@ -4,6 +4,7 @@
   font-family: "Courier New", Courier, monospace;
 }
 .menu-list {
+  text-transform: uppercase;
   list-style-type: none;
   padding: 5px 0px 5px 0px;
   min-width: 100px;
@@ -13,8 +14,12 @@
   background-color: rgb(223, 20, 20);
 }
 
+/* .menu-list li:focus-within {
+  background-color: rgb(212, 16, 16);
+} */
+
 .menu-title {
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   border: solid 0.3em;
   border-color: silver;
   font-weight: bold;
