@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 .menu-list {
   text-transform: uppercase;
@@ -13,10 +13,6 @@
 .menu-list li:active {
   background-color: rgb(223, 20, 20);
 }
-
-/* .menu-list li:focus-within {
-  background-color: rgb(212, 16, 16);
-} */
 
 .menu-title {
   padding: 20px;
@@ -56,14 +52,16 @@
 
 .content-style {
   display: flex;
+  position: absolute;
   flex-flow: row wrap;
+  height: 527px;
   border: solid 0.3em;
   border-color: rgba(182, 160, 90, 0.486);
   margin: 0.5em 10px 0.5em 10px;
 }
 
 .clearfix:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
