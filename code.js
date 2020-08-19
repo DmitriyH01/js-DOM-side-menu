@@ -27,6 +27,14 @@ const contentMenu = [
 ];
 
 document.querySelector('.menu-list').addEventListener('click', function (e) {
+  //Remove unnecessary сolor from an element
+  let nav = document.querySelector('.menu-list').children;
+  for (let i = 0; i < nav.length; i++) {
+    if (nav[i].classList.contains('selected-li') === true) {
+      nav[i].classList.remove('selected-li');
+    }
+  }
+  //choose content
   if (e.target && e.target.nodeName === 'LI') {
     switch (e.target.className) {
       case 'menu-item-1':
@@ -46,8 +54,13 @@ document.querySelector('.menu-list').addEventListener('click', function (e) {
         break;
     }
   }
-});
 
+  //change the color of the selected element
+  if (e.target.classList.contains('selected-li') !== true && e.target.nodeName === 'LI') {
+    e.target.classList.add('selected-li');
+  }
+});
+// showing selected content
 function showContent(nameClass) {
   const element = document.querySelector('#content');
 
@@ -57,7 +70,7 @@ function showContent(nameClass) {
 
   const fragment = document.createDocumentFragment();
   const div = document.createElement('div');
-  div.className = 'content content-style';
+  div.classList.add('content', 'content-style');
 
   contentMenu.forEach((el) => {
     if (el.nameClassFromArr === nameClass) {
