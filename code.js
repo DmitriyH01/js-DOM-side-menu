@@ -26,44 +26,52 @@ const contentMenu = [
   },
 ];
 
-document.querySelector('.menu-list').addEventListener('click', function (e) {
-  //Remove unnecessary сolor from an element
-  let nav = document.querySelector('.menu-list').children;
-  for (let i = 0; i < nav.length; i++) {
-    if (nav[i].classList.contains('selected-li') === true && e.target.nodeName === 'LI') {
-      nav[i].classList.remove('selected-li');
-    }
-  }
-  //choose content
-  if (e.target && e.target.nodeName === 'LI') {
-    switch (e.target.className) {
-      case 'menu-item-1':
-        showContent('menu-item-1');
-        break;
-      case 'menu-item-2':
-        showContent('menu-item-2');
-        break;
-      case 'menu-item-3':
-        showContent('menu-item-3');
-        break;
-      case 'menu-item-4':
-        showContent('menu-item-4');
-        break;
-      case 'menu-item-5':
-        showContent('menu-item-5');
-        break;
-    }
+let menu = document.querySelector('.menu-list');
+
+//обработчик событий при клике на <li>
+menu.onclick = function (event) {
+  let li = event.target.closest('li');
+
+  if (!li) return;
+
+  if (!menu.contains(li)) return;
+
+  switch (li.className) {
+    case 'menu-item-1':
+      showContent('menu-item-1');
+      break;
+    case 'menu-item-2':
+      showContent('menu-item-2');
+      break;
+    case 'menu-item-3':
+      showContent('menu-item-3');
+      break;
+    case 'menu-item-4':
+      showContent('menu-item-4');
+      break;
+    case 'menu-item-5':
+      showContent('menu-item-5');
+      break;
   }
 
-  //change the color of the selected element
-  if (e.target.classList.contains('selected-li') !== true && e.target.nodeName === 'LI') {
-    e.target.classList.add('selected-li');
+  highlight(li); // подсвечиваю выбранный menu-item
+};
+
+function highlight(tagName) {
+  // проверяю наличие класса элемента и удаляю если он есть
+  for (let i = 0; i < menu.children.length; i++) {
+    if (menu.children[i].classList.contains('selected-li') === true) {
+      menu.children[i].classList.remove('selected-li');
+    }
+  } //добавляю класс если его нет
+  if (tagName.classList.contains('selected-li') !== true) {
+    tagName.classList.add('selected-li');
   }
-});
-// showing selected content
+}
+
+const element = document.querySelector('#content');
+
 function showContent(nameClass) {
-  const element = document.querySelector('#content');
-
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
