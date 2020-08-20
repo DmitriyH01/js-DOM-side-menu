@@ -9,16 +9,11 @@
   padding: 5px;
   min-width: 100px;
   padding-inline-start: 1px;
-
-}
-
-.menu-list li :hover {
-  background-color: rgb(223, 20, 20);
 }
 
 .menu {
   padding: 20px;
-  border: solid 0.3em;
+  border: solid 5px;
   border-color: silver;
   font-weight: bold;
   margin: 5px;
@@ -28,7 +23,7 @@
 .menu p {
   text-align: end;
   padding: 25px;
-  margin: 1em;
+  margin: 10px;
   background-color: lightgray;
 }
 
@@ -39,11 +34,11 @@
 .menu-item-5 {
   padding: 20px;
   background-color: rgba(182, 160, 90, 0.486);
-  border-bottom: solid 0.2em;
+  border-bottom: solid 3px;
   border-radius: 30px 0 0 30px;
   border-bottom-color: silver;
   cursor: pointer;
-  margin: 4px;
+  margin: 15px;
 }
 
 .selected-li {
@@ -94,8 +89,8 @@
   position: absolute;
   border: solid 0.3em;
   border-color: rgba(182, 160, 90, 0.486);
-  margin: 0.5em 10px;
-  padding: 1em 2em 1.5em 1em;
+  margin: 5px 10px;
+  padding: 20px;
   font-weight: bold;
   height: 527px;
 }
